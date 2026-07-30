@@ -1,19 +1,52 @@
 aid: koda-health
 name: Koda Health
-description: Koda Health is a company surfaced as a portfolio company of techstars and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Koda Health is a Houston-based digital health company whose AI-enhanced patient decision
+  support platform digitizes serious illness planning for health systems, health plans, and value-based
+  care organizations. Its two solutions — Advance Care Planning (ACP) and Kidney Action Planning (KAP)
+  for chronic kidney disease — walk patients through video-guided, interactive goals-of-care conversations
+  and produce legally compliant advance directives, medical power of attorney, and POLST/DNR documents
+  with digital signing and notarization across all 50 states. Completed plans are pushed into the
+  provider's EMR through an integration Koda states meets HL7 FHIR standards, and can be shared with
+  care teams, payors, and family. KodaCares adds human Patient Advocates for complex cases. Koda publishes
+  no public developer portal, API documentation, or SDKs; its API host (api.kodahealthcare.com) is a
+  closed backend serving the app, and EMR interoperability is delivered through partner and health-system
+  integrations rather than a self-serve public API.
 url: https://raw.githubusercontent.com/api-evangelist/koda-health/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://www.kodahealthcare.com/wp-content/uploads/2024/10/KodaHealth-ShareImage.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - techstars
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: portfolio-lead-enriched
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Health Care
+- Digital Health
+- Advance Care Planning
+- Serious Illness Care
+- Chronic Kidney Disease
+- Patient Engagement
+- Clinical Decision Support
+- EMR Integration
+- HL7 FHIR
+- Interoperability
+- HIPAA
+- Value Based Care
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +55,45 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://kodahealthcare.com/
+  url: https://www.kodahealthcare.com/
+- type: About
+  url: https://www.kodahealthcare.com/about/
+- type: Blog
+  url: https://www.kodahealthcare.com/latest-news-insights/
+- type: BlogRSS
+  url: https://www.kodahealthcare.com/feed/
+- type: Login
+  url: https://app.kodahealthcare.com/
+- type: Support
+  url: https://koda.health/faq-help/
+- type: FAQ
+  url: https://www.kodahealthcare.com/faqs/
+- type: Contact
+  url: https://www.kodahealthcare.com/book-a-demo/
+- type: Demo
+  url: https://www.kodahealthcare.com/book-a-demo/
+- type: TermsOfService
+  url: https://www.kodahealthcare.com/terms-conditions/
+- type: PrivacyPolicy
+  url: https://www.kodahealthcare.com/privacy-policy/
+- type: GitHubOrganization
+  url: https://github.com/Koda-Health
+- type: PressKit
+  url: https://www.kodahealthcare.com/press-kit/
+- type: CaseStudies
+  url: https://www.kodahealthcare.com/case-studies/
+- type: Careers
+  url: https://www.kodahealthcare.com/careers/
+- type: Compliance
+  url: conformance/koda-health-conformance.yml
+- type: Conformance
+  url: conformance/koda-health-conformance.yml
+- type: DomainSecurity
+  url: security/koda-health-domain-security.yml
+- type: LLMsTxt
+  url: llms/koda-health-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
