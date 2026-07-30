@@ -1,0 +1,45 @@
+# Koda Health
+
+> Koda Health is a Houston-based digital health company whose AI-enhanced patient decision support platform digitizes serious illness planning for health systems, health plans, and value-based care organizations. Its two solutions — Advance Care Planning (ACP) and Kidney Action Planning (KAP) for chronic kidney disease — guide patients through video-based, interactive goals-of-care conversations and produce legally compliant advance directives, medical power of attorney, and POLST/DNR documents with digital signing and notarization in all 50 states. Completed plans are pushed into the provider's EMR through an integration Koda states meets HL7 FHIR standards. KodaCares adds human Patient Advocates for complex cases.
+
+## API status
+
+Koda Health publishes **no public API**. There is no developer portal, no API reference, no OpenAPI or AsyncAPI document, no SDKs or packages on npm/PyPI/Maven/NuGet/RubyGems, no CLI, no MCP server, and no public Postman collection. `api.kodahealthcare.com` is a closed AWS load-balanced backend that answers HTTP 403 to every unauthenticated request. EMR interoperability is delivered through health-system and partner integrations (Koda has publicly announced an Epic partnership) rather than a self-serve public API. Agents should not attempt programmatic access; the entry point for integration is the demo/contact form.
+
+## Solutions
+
+- [Advance Care Planning (ACP)](https://www.kodahealthcare.com/advance-care-planning/): Digital advance directives, MPOA, POLST/DNR in all 50 states with in-platform signing and notarization; EMR-integrated.
+- [Kidney Action Planning (KAP)](https://www.kodahealthcare.com/kidney-action-planning/): Care planning and education for chronic kidney disease patients, aimed at reducing unplanned dialysis starts.
+- [KodaCares](https://www.kodahealthcare.com/kodacares/): Risk models identify complex patients and route them to human Patient Advocates for 1:1 support.
+
+## Company
+
+- [Website](https://www.kodahealthcare.com/)
+- [About and leadership](https://www.kodahealthcare.com/about/)
+- [Patient-facing site](https://koda.health/)
+- [Application login](https://app.kodahealthcare.com/)
+- [Book a demo](https://www.kodahealthcare.com/book-a-demo/)
+- [Careers](https://www.kodahealthcare.com/careers/)
+- [Press kit](https://www.kodahealthcare.com/press-kit/)
+- [GitHub organization](https://github.com/Koda-Health): one public repository; no client libraries.
+
+## Docs and content
+
+- [News and insights](https://www.kodahealthcare.com/latest-news-insights/) ([RSS](https://www.kodahealthcare.com/feed/))
+- [Case studies](https://www.kodahealthcare.com/case-studies/)
+- [FAQs](https://www.kodahealthcare.com/faqs/)
+- [Patient FAQ and help](https://koda.health/faq-help/)
+
+## Compliance and legal
+
+- [Privacy policy](https://www.kodahealthcare.com/privacy-policy/): states compliance with HIPAA, the HIPAA Privacy and Security Standards (45 C.F.R. Parts 160/164), the Standards for Electronic Transactions (45 C.F.R. Parts 160/162), and the HITECH Act; discloses PHI only under an applicable business associate agreement.
+- [Terms and conditions](https://www.kodahealthcare.com/terms-conditions/)
+- No SOC 2, HITRUST, or ISO 27001 attestation is published, and there is no trust center or status page.
+- No `/.well-known/security.txt` and no published vulnerability disclosure program.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/koda-health/refs/heads/main/apis.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/koda-health/refs/heads/main/conformance/koda-health-conformance.yml): HL7 FHIR, HIPAA, HITECH, POLST claims with verbatim evidence.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/koda-health/refs/heads/main/security/koda-health-domain-security.yml): TLS, HSTS, DNSSEC, CAA, SPF, DMARC probe results.
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/koda-health/refs/heads/main/well-known/koda-health-well-known.yml): no discovery documents found.

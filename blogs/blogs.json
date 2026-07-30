@@ -1,0 +1,28 @@
+{
+  "repo": "koda-health",
+  "feeds": [
+    {
+      "source": "https://www.kodahealthcare.com/feed/",
+      "feed_url": "https://www.kodahealthcare.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.kodahealthcare.com/about/",
+      "feed_url": "https://www.kodahealthcare.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.kodahealthcare.com/latest-news-insights/",
+      "feed_url": "https://www.kodahealthcare.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-07-25T15:00:33Z"
+}

@@ -1,0 +1,54 @@
+generated: '2026-07-19'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts (0-working/probe-domain-security.py, plus manual
+  probes of the application, API, and patient-facing hosts the script does not reach because Koda
+  publishes no OpenAPI servers[])
+hosts:
+- host: www.kodahealthcare.com
+  role: marketing site
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  5 11:05:05 2026 GMT
+  hsts: false
+- host: app.kodahealthcare.com
+  role: patient/provider application (S3 + CloudFront)
+  https: true
+  cert_expires: Oct 16 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: true
+  notes: >-
+    Strongest posture of the estate — also sets CSP with report-uri, X-Frame-Options DENY,
+    X-Content-Type-Options nosniff, Cross-Origin-Opener-Policy same-origin, Referrer-Policy no-referrer,
+    and Permissions-Policy denying geolocation/microphone/camera.
+- host: api.kodahealthcare.com
+  role: closed backend API (AWS ELB, awselb/2.0); 403 to all unauthenticated requests
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Sep 20 23:59:59 2026 GMT
+  hsts: false
+- host: koda.health
+  role: patient-facing marketing site
+  https: true
+  cert_expires: Sep 24 01:04:29 2026 GMT
+  hsts: false
+domains:
+- domain: kodahealthcare.com
+  dnssec: true
+  caa:
+  - 0 issue "letsencrypt.org"
+  - 0 issue "amazon.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+- domain: koda.health
+  dnssec: true
+  caa: []
+  spf: false
+  dmarc: false
+  dmarc_policy: null
+findings:
+- HSTS is enabled only on app.kodahealthcare.com; the marketing, patient, and API hosts do not set it.
+- DMARC on kodahealthcare.com is published at p=none (monitor only), not quarantine or reject.
+- koda.health publishes no SPF, no DMARC, and no CAA, though DNSSEC is signed.
+- api.kodahealthcare.com negotiates TLS 1.2 where the marketing host reaches TLS 1.3.

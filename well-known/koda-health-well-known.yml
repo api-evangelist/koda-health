@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of Koda Health hosts
+result: none
+notes: >-
+  No /.well-known/ discovery document was found on any Koda Health host. Recorded for auditability so a
+  later re-run can detect a change. app.kodahealthcare.com is a single-page app served from S3/CloudFront
+  with a catch-all rewrite: it answers 200 with text/html (the SPA shell, content-length 2220) for every
+  /.well-known/ path, so those 200s are soft-404s and are marked as such — no discovery document exists.
+  api.kodahealthcare.com is a closed AWS ELB backend that answers 403 to every unauthenticated path.
+  No apis.yml pointer is emitted for this artifact because nothing was found.
+hosts:
+- host: https://www.kodahealthcare.com
+  role: marketing site (WordPress)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://app.kodahealthcare.com
+  role: patient/provider application (SPA on S3 + CloudFront)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 200, soft_404: true, content_type: text/html,
+     note: SPA shell returned, not an OIDC discovery document}
+  - {path: /.well-known/oauth-authorization-server, status: 200, soft_404: true, content_type: text/html,
+     note: SPA shell returned, not an RFC 8414 document}
+  - {path: /.well-known/api-catalog, status: 200, soft_404: true, content_type: text/html,
+     note: SPA shell returned, not an RFC 9727 api-catalog}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://api.kodahealthcare.com
+  role: closed backend API (AWS ELB); 403 to all unauthenticated requests
+  documents:
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /openapi.json, status: 403}
+  - {path: /swagger.json, status: 403}
+  - {path: /docs, status: 403}
+  - {path: /graphql, status: 403}
+- host: https://koda.health
+  role: patient-facing marketing site (WordPress)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}

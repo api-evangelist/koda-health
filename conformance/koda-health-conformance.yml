@@ -1,0 +1,70 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.kodahealthcare.com/
+notes: >-
+  Koda Health publishes no developer portal, API reference, or OpenAPI, so nothing here is derived
+  from a specification. Every entry below is anchored to a claim Koda makes in its own public
+  marketing, privacy policy, or terms — recorded verbatim as evidence. Absence of an entry means the
+  claim was not found on Koda's public surface, not that the standard is unsupported internally.
+standards:
+- id: hl7-fhir
+  conforms: true
+  evidence: >-
+    Homepage, "Streamlined Integration": "Complete EMR integration that meets HL7 FHIR standards."
+  evidence_url: https://www.kodahealthcare.com/
+  caveat: Vendor claim only; no FHIR CapabilityStatement, profile, or implementation guide is published.
+- id: hipaa
+  conforms: true
+  evidence: >-
+    Privacy policy and terms: "we will comply with all applicable state and federal laws and regulations
+    including the privacy and confidentiality of patient records including but not limited to (i) The
+    Health Insurance Portability and Accountability Act of 1996 ('HIPAA'); (ii) the Privacy and Security
+    Standards (45 C.F.R. Parts 160 and 164) and the Standards for Electronic Transactions (45 C.F.R
+    Parts 160 and 162)"; disclosures governed by "the applicable business associate agreement".
+  evidence_url: https://www.kodahealthcare.com/privacy-policy/
+- id: hitech
+  conforms: true
+  evidence: >-
+    Privacy policy names "The Health Information Technology Economic and Clinical Health Act of 2009
+    (the 'HITECH Act')" among the regulations Koda complies with.
+  evidence_url: https://www.kodahealthcare.com/privacy-policy/
+- id: hipaa-business-associate
+  conforms: true
+  evidence: >-
+    Privacy policy conditions third-party disclosure of medical records on "the applicable business
+    associate agreement", indicating Koda operates as a HIPAA business associate to its health system
+    and health plan customers.
+  evidence_url: https://www.kodahealthcare.com/privacy-policy/
+- id: polst
+  conforms: true
+  evidence: >-
+    Advance Care Planning page: "Supports advance directives, MPOA, POLST/DNR orders in all 50 states,
+    including digital signing and notarization."
+  evidence_url: https://www.kodahealthcare.com/advance-care-planning/
+- id: soc2
+  conforms: false
+  evidence: No SOC 2 claim found; no trust center at trust.kodahealthcare.com (DNS does not resolve).
+- id: hitrust
+  conforms: false
+  evidence: No HITRUST CSF certification claim found on the public site.
+- id: iso-27001
+  conforms: false
+  evidence: No ISO 27001 claim found on the public site.
+- id: oauth2
+  conforms: unknown
+  evidence: >-
+    No public OpenAPI or auth documentation. /.well-known/openid-configuration and
+    /.well-known/oauth-authorization-server return 404 on the marketing host; api.kodahealthcare.com
+    returns 403 to all unauthenticated requests.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public specification or error reference to evaluate.
+compliance_program:
+  published: true
+  kind: statutory-commitment
+  scope: HIPAA Privacy and Security Standards, HIPAA Electronic Transactions, HITECH Act
+  url: https://www.kodahealthcare.com/privacy-policy/
+  certifications: []
+  caveat: >-
+    Koda publishes a statutory compliance commitment in its privacy policy and terms, but publishes no
+    third-party attestation (SOC 2, HITRUST, ISO 27001) and operates no trust center.
