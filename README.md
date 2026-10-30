@@ -64,22 +64,92 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Koda Health is a Houston-based digital health company whose AI-enhanced patient decision support platform digitizes serious illness planning for health systems, health plans, and value-based care organizations. Its two solutions — Advance Care Planning (ACP) and Kidney Action Planning (KAP) for chronic kidney disease — guide patients through video-based, interactive goals-of-care conversations and produce legally compliant advance directives, medical power of attorney, and POLST/DNR documents with digital signing and notarization in all 50 states. Completed plans are pushed into the provider's EMR through an integration Koda states meets HL7 FHIR standards. KodaCares adds human Patient Advocates for complex cases.
+Koda Health is a Houston-based digital health company whose AI-enhanced patient decision support platform digitizes serious illness planning for health systems, health plans, and value-based care organizations. Its two solutions — Advance Care Planning (ACP) and Kidney Action Planning (KAP) for chronic kidney disease — walk patients through video-guided, interactive goals-of-care conversations and produce legally compliant advance directives, medical power of attorney, and POLST/DNR documents with digital signing and notarization across all 50 states. Completed plans are pushed into the provider's EMR through an integration Koda states meets HL7 FHIR standards, and can be shared with care teams, payors, and family. KodaCares adds human Patient Advocates for complex cases. Koda publishes no public developer portal, API documentation, or SDKs; its API host (api.kodahealthcare.com) is a closed backend serving the app, and EMR interoperability is delivered through partner and health-system integrations rather than a self-serve public API.
 
-- Website: https://www.kodahealthcare.com/
-- Patients: https://koda.health/
-- Application: https://app.kodahealthcare.com/
-- Backed by: techstars
+**Areas:** Company · Healthcare · Digital Health · Advance Care Planning · Serious Illness Care · Chronic Kidney Disease · Patient Engagement · Clinical Decision Support · EMR Integration · FHIR · Interoperability · HIPAA
 
-## API status
+## Koda Health on APIs.io
 
-Koda Health publishes **no public API**. There is no developer portal, API reference, OpenAPI or AsyncAPI document, SDK, CLI, MCP server, or public Postman collection. `api.kodahealthcare.com` is a closed AWS load-balanced backend returning HTTP 403 to every unauthenticated request. EMR interoperability is delivered through health-system and partner integrations rather than a self-serve public API.
+Everything profiled for Koda Health is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/koda-health/](https://apis.io/providers/koda-health/)** — or go straight to one of the APIs or properties below.
 
-## Artifacts
+### Published properties
 
-| Artifact | File | Method |
-|---|---|---|
-| Conformance / Compliance | `conformance/koda-health-conformance.yml` | searched |
-| Domain security | `security/koda-health-domain-security.yml` | probed |
-| Well-known probe (no hits) | `well-known/koda-health-well-known.yml` | searched |
-| llms.txt | `llms/koda-health-llms.txt` | generated |
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Moved to /providers/koda-health/](https://apis.io/servers/koda-health/koda-health/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Koda Health Domain Security](https://apis.io/security/koda-health/koda-health-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.kodahealthcare.com/)
+- [Support](https://koda.health/faq-help/)
+- [Blog](https://www.kodahealthcare.com/latest-news-insights/)
+- [Terms of service](https://www.kodahealthcare.com/terms-conditions/)
+- [Privacy policy](https://www.kodahealthcare.com/privacy-policy/)
+- [GitHub](https://github.com/Koda-Health)
+
+## API Evangelist rating
+
+**Kin Score 17.9** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 35.5 |
+
+**Agent readiness 2.2** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 18.8** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/koda-health/](https://apis.io/providers/koda-health/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Koda Health: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/koda-health/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
